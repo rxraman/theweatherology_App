@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.raiders.theweatherology.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/FirstFragment"
+        android:title="@string/firstFragment"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/SecondFragment"
+        android:title="@string/secondFragment" />
+    <item
+        android:id="@+id/ThirdFragment"
+        android:title="@string/_5dayweather" />
+</menu>
