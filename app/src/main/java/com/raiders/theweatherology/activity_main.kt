@@ -7,7 +7,7 @@ import android.view.MenuItem
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 
-class MainActivity : AppCompatActivity() {
+class activity_main : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
