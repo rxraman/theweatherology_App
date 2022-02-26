@@ -1,20 +1,20 @@
 package com.raiders.theweatherology
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.fragment_second.*
 
 class SecondFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SecondFragment()
-    }
+//    companion object {
+//        fun newInstance() = SecondFragment()
+//    }
 
     private lateinit var viewModel: SecondViewModel
 
@@ -25,68 +25,77 @@ class SecondFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         viewModel = ViewModelProvider(this).get(SecondViewModel::class.java)
 
-        val tempObserver = Observer<Double>{temp-> textTemp.text = ("%.0f"+ "\u2103").format(temp)}
-        viewModel.getTemp().observe(viewLifecycleOwner,tempObserver)
-        val tempObserver1 = Observer<Double>{temp1-> textTempOne.text="%.0f °F".format(temp1)}
-        viewModel.getTemp1().observe(viewLifecycleOwner,tempObserver1)
+        val tempObserver =
+            Observer<Double> { temp -> textTemp.text = ("%.0f" + "\u2103").format(temp) }
+        viewModel.getTemp().observe(viewLifecycleOwner, tempObserver)
 
-        val tempObserver2 = Observer<Double>{temp2-> textTempTwo.text="%.0f °F".format(temp2)}
-        viewModel.getTemp2().observe(viewLifecycleOwner,tempObserver2)
+        val tempObserver1 = Observer<Double> { temp1 -> textTempOne.text = ("%.0f" + "\u2103").format(temp1) }
+        viewModel.getTemp1().observe(viewLifecycleOwner, tempObserver1)
 
-        val tempObserver3 = Observer<Double>{temp3-> textTempThree.text="%.0f °F".format(temp3)}
-        viewModel.getTemp3().observe(viewLifecycleOwner,tempObserver3)
+        val tempObserver2 = Observer<Double> { temp2 -> textTempTwo.text = ("%.0f" + "\u2103").format(temp2) }
+        viewModel.getTemp2().observe(viewLifecycleOwner, tempObserver2)
 
-        val tempObserver4 = Observer<Double>{temp4-> textTempFour.text="%.0f °F".format(temp4)}
-        viewModel.getTemp4().observe(viewLifecycleOwner,tempObserver4)
+        val tempObserver3 =
+            Observer<Double> { temp3 -> textTempThree.text = ("%.0f" + "\u2103").format(temp3) }
+        viewModel.getTemp3().observe(viewLifecycleOwner, tempObserver3)
 
-        val tempObserver5 = Observer<Double>{temp5-> textTempFive.text="%.0f °F".format(temp5)}
-        viewModel.getTemp5().observe(viewLifecycleOwner,tempObserver5)
+        val tempObserver4 =
+            Observer<Double> { temp4 -> textTempFour.text = ("%.0f" + "\u2103").format(temp4) }
+        viewModel.getTemp4().observe(viewLifecycleOwner, tempObserver4)
 
-
-        val dateObserver = Observer<String> {date-> textDate.text = date.toString()}
-        viewModel.getDate().observe(viewLifecycleOwner,dateObserver)
-        val dateObserver1= Observer<String> {date1->dayOne.text=date1.toString()}
-        viewModel.getDate1().observe(viewLifecycleOwner,dateObserver1)
-
-        val dateObserver2= Observer<String> {date2->dayTwo.text=date2.toString()}
-        viewModel.getDate2().observe(viewLifecycleOwner,dateObserver2)
-
-        val dateObserver3= Observer<String> {date3->dayThree.text=date3.toString()}
-        viewModel.getDate3().observe(viewLifecycleOwner,dateObserver3)
-
-        val dateObserver4= Observer<String> {date4->dayFour.text=date4.toString()}
-        viewModel.getDate4().observe(viewLifecycleOwner,dateObserver4)
-
-        val dateObserver5= Observer<String> {date5->dayFive.text=date5.toString()}
-        viewModel.getDate5().observe(viewLifecycleOwner,dateObserver5)
+        val tempObserver5 =
+            Observer<Double> { temp5 -> textTempFive.text = ("%.0f" + "\u2103").format(temp5) }
+        viewModel.getTemp5().observe(viewLifecycleOwner, tempObserver5)
 
 
-        val windObserver = Observer<Double> {wind-> TextWind.text = ("%.2f"+ " m/s").format(wind)}
-        viewModel.getWind().observe(viewLifecycleOwner,windObserver)
+        val dateObserver = Observer<String> { date -> textDate.text = date.toString() }
+        viewModel.getDate().observe(viewLifecycleOwner, dateObserver)
+
+        val dateObserver1 = Observer<String> { date1 -> dayOne.text = date1.toString() }
+        viewModel.getDate1().observe(viewLifecycleOwner, dateObserver1)
+
+        val dateObserver2 = Observer<String> { date2 -> dayTwo.text = date2.toString() }
+        viewModel.getDate2().observe(viewLifecycleOwner, dateObserver2)
+
+        val dateObserver3 = Observer<String> { date3 -> dayThree.text = date3.toString() }
+        viewModel.getDate3().observe(viewLifecycleOwner, dateObserver3)
+
+        val dateObserver4 = Observer<String> { date4 -> dayFour.text = date4.toString() }
+        viewModel.getDate4().observe(viewLifecycleOwner, dateObserver4)
+
+        val dateObserver5 = Observer<String> { date5 -> dayFive.text = date5.toString() }
+        viewModel.getDate5().observe(viewLifecycleOwner, dateObserver5)
+
+
+        val windObserver =
+            Observer<Double> { wind -> TextWind.text = ("%.2f" + " m/s").format(wind) }
+        viewModel.getWind().observe(viewLifecycleOwner, windObserver)
 
         val humidityObserver = Observer<Int>
-        {humidity-> textHumidity.text =  humidity.toString()+" %"}
-        viewModel.getHumidity().observe(viewLifecycleOwner,humidityObserver)
+        { humidity -> textHumidity.text = humidity.toString() + " %" }
+        viewModel.getHumidity().observe(viewLifecycleOwner, humidityObserver)
 
         val feelsLikeObserver = Observer<Double>
-        {feelsLike-> textFeelsLike.text = ("%.0f"+ "\u2103").format(feelsLike)}
-        viewModel.getFeelsLike().observe(viewLifecycleOwner,feelsLikeObserver)
+        { feelsLike -> textFeelsLike.text = ("%.0f" + "\u2103").format(feelsLike) }
+        viewModel.getFeelsLike().observe(viewLifecycleOwner, feelsLikeObserver)
 
         val minTempObserver = Observer<Double>
-        {minTemp-> minTem.text = ("%.0f"+ "\u2103").format(minTemp)}
-        viewModel.getMinTemp().observe(viewLifecycleOwner,minTempObserver)
+        { minTemp -> minTem.text = ("%.0f" + "\u2103").format(minTemp) }
+        viewModel.getMinTemp().observe(viewLifecycleOwner, minTempObserver)
 
         val maxTempObserver = Observer<Double>
-        {maxTemp-> maxTem.text = ("%.0f"+ "\u2103").format(maxTemp)}
-        viewModel.getMaxTemp().observe(viewLifecycleOwner,maxTempObserver)
+        { maxTemp -> maxTem.text = ("%.0f" + "\u2103").format(maxTemp) }
+        viewModel.getMaxTemp().observe(viewLifecycleOwner, maxTempObserver)
 
         val mainDescriptionObserver = Observer<String>
-        {mainDescription-> textMainDecription.text = mainDescription.toString()}
-        viewModel.getMainDescription().observe(viewLifecycleOwner,mainDescriptionObserver)
+        { mainDescription -> textMainDecription.text = mainDescription.toString() }
+        viewModel.getMainDescription().observe(viewLifecycleOwner, mainDescriptionObserver)
 
 
         textCity.text = arguments?.getString("message")
