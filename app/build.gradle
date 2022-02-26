@@ -6,7 +6,7 @@ plugins {
 
 }
 
-def apikeyPropertiesFile = rootProject.file("local.properties")
+def apikeyPropertiesFile = rootProject.file("API.properties")
 def apikeyProperties = new Properties()
 apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
