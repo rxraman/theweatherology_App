@@ -14,9 +14,6 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
-<!--        <action-->
-<!--            android:id="@+id/action_FirstFragment_to_thirdFragment"-->
-<!--            app:destination="@id/thirdFragment" />-->
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -27,10 +24,9 @@
             android:name="message"
             app:argType="string"
             android:defaultValue="Nothing" />
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
-<!--    <fragment-->
-<!--        android:id="@+id/thirdFragment"-->
-<!--        android:name="com.famsbprog.WeatherApp.ThirdFragment"-->
-<!--        android:label="third_fragment"-->
-<!--        tools:layout="@layout/third_fragment" />-->
+
 </navigation>

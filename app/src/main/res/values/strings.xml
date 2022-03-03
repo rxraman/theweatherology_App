@@ -32,4 +32,7 @@
     <string name="UnitMeasure">Unit Measure</string>
     <string name="Celsius">C°</string>
     <string name="fahrenheit">F°</string>
+    <string name="HighestTemp">H:</string>
+    <string name="LowestTemp">L:</string>
+    <string name="FiveDayForecast">5-Day Forecast:</string>
 </resources>

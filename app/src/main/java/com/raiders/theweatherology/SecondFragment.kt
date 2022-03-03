@@ -1,5 +1,6 @@
 package com.raiders.theweatherology
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,7 @@ class SecondFragment : Fragment() {
     }
 
 
+    @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -85,6 +87,7 @@ class SecondFragment : Fragment() {
         val minTempObserver = Observer<Double>
         { minTemp -> minTem.text = ("%.0f"+"\u00B0").format(minTemp) }
         viewModel.getMinTemp().observe(viewLifecycleOwner, minTempObserver)
+
 
         val maxTempObserver = Observer<Double>
         { maxTemp -> maxTem.text = ("%.0f" + "\u00B0").format(maxTemp) }

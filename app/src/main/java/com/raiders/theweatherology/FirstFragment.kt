@@ -30,10 +30,5 @@ class FirstFragment : Fragment() {
             )
         }
 
-//        view.findViewById<Button>(R.id.button2).setOnClickListener {
-//            Navigation.findNavController(it).navigate(
-//                R.id.action_FirstFragment_to_thirdFragment,
-//                bundleOf("message" to editCity.text.toString()))
-//        }
     }
 }

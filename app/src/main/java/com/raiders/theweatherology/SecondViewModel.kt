@@ -200,7 +200,7 @@ class SecondViewModel : ViewModel() {
                 minTemp1.value= main0.getDouble("temp_min")
                 val toDate0 = dayOne.getLong("dt")
                 date1.value = SimpleDateFormat(
-                    "EEEE, MMMM dd",
+                    "EEE",
                     Locale.ENGLISH
                 ).format(Date(toDate0 * 1000))
 
@@ -210,7 +210,7 @@ class SecondViewModel : ViewModel() {
                 temp2.value = main8.getDouble("temp")
                 val toDate8 = dayTwo.getLong("dt")
                 date2.value = SimpleDateFormat(
-                    "EEEE, MMMM dd",
+                    "EEE",
                     Locale.ENGLISH
                 ).format(Date(toDate8 * 1000))
 
@@ -218,7 +218,7 @@ class SecondViewModel : ViewModel() {
                 val main16 = dayThree.getJSONObject("main")
                 temp3.value = main16.getDouble("temp")
                 val toDate16 = dayThree.getLong("dt")
-                date3.value = SimpleDateFormat("EEEE, MMMM dd", Locale.ENGLISH).format(
+                date3.value = SimpleDateFormat("EEE", Locale.ENGLISH).format(
                     Date(
                         toDate16 * 1000
                     )
@@ -228,7 +228,7 @@ class SecondViewModel : ViewModel() {
                 val main24 = dayFour.getJSONObject("main")
                 temp4.value = main24.getDouble("temp")
                 val toDate24 = dayFour.getLong("dt")
-                date4.value = SimpleDateFormat("EEEE, MMMM dd", Locale.ENGLISH).format(
+                date4.value = SimpleDateFormat("EEE", Locale.ENGLISH).format(
                     Date(
                         toDate24 * 1000
                     )
@@ -239,7 +239,7 @@ class SecondViewModel : ViewModel() {
                 temp5.value = main32.getDouble("temp")
                 val toDate32 = dayFive.getLong("dt")
                 date5.setValue(
-                    SimpleDateFormat("EEEE, MMMM dd", Locale.ENGLISH).format(
+                    SimpleDateFormat("EEE", Locale.ENGLISH).format(
                         Date(
                             toDate32 * 1000
                         )
