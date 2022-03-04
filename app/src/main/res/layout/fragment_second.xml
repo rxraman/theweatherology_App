@@ -86,12 +86,12 @@
         android:id="@+id/scrollView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/SnowView">
 
 
         <LinearLayout
@@ -408,5 +408,57 @@
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toEndOf="@+id/maxTem"
         app:layout_constraintTop_toBottomOf="@+id/textMainDecription" />
+
+    <TextView
+        android:id="@+id/rainView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/rainPrec"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textRain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maxTem" />
+
+    <TextView
+        android:id="@+id/textRain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/rainPrec"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rainView"
+        app:layout_constraintTop_toBottomOf="@+id/minTem" />
+
+    <TextView
+        android:id="@+id/SnowView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/snowPrec"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textSnow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rainView" />
+
+    <TextView
+        android:id="@+id/textSnow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/snowPrec"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SnowView"
+        app:layout_constraintTop_toBottomOf="@+id/textRain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

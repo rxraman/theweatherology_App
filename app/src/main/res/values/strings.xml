@@ -29,10 +29,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="maxtemp">maxTemp</string>
     <string name="mintemp">minTemp</string>
+    <string name="snowPrec">Snow Precipitation</string>
+    <string name="rainPrec">Rain Precipitation</string>
     <string name="UnitMeasure">Unit Measure</string>
     <string name="Celsius">C°</string>
     <string name="fahrenheit">F°</string>
     <string name="HighestTemp">H:</string>
     <string name="LowestTemp">L:</string>
     <string name="FiveDayForecast">5-Day Forecast:</string>
+    <string name="icon">icon</string>
 </resources>

@@ -72,6 +72,7 @@ class SecondFragment : Fragment() {
         viewModel.getDate5().observe(viewLifecycleOwner, dateObserver5)
 
 //One Day Forecast Observers
+        //Metric: meter/sec, Imperial: miles/hour.
         val windObserver =
             Observer<Double> { wind -> TextWind.text = ("%.2f" + " m/s").format(wind) }
         viewModel.getWind().observe(viewLifecycleOwner, windObserver)
@@ -88,10 +89,17 @@ class SecondFragment : Fragment() {
         { minTemp -> minTem.text = ("%.0f"+"\u00B0").format(minTemp) }
         viewModel.getMinTemp().observe(viewLifecycleOwner, minTempObserver)
 
-
         val maxTempObserver = Observer<Double>
         { maxTemp -> maxTem.text = ("%.0f" + "\u00B0").format(maxTemp) }
         viewModel.getMaxTemp().observe(viewLifecycleOwner, maxTempObserver)
+
+//        val rainPrecipitation = Observer<Double> {
+//            rainPrec -> textRain.text = rainPrec.toString() + " mm" }
+//        viewModel.getRainPrec().observe(viewLifecycleOwner, rainPrecipitation)
+//
+//        val snowPrecipitation = Observer<Double> {
+//            snowPrec -> textSnow.text = snowPrec.toString() + " mm" }
+//        viewModel.getSnowPrec().observe(viewLifecycleOwner, snowPrecipitation)
 
         val mainDescriptionObserver = Observer<String>
         { mainDescription -> textMainDecription.text = mainDescription.toString() }

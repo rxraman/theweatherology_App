@@ -21,6 +21,11 @@ class SecondViewModel : ViewModel() {
     private var minTemp: MutableLiveData<Double> = MutableLiveData()
     private var maxTemp: MutableLiveData<Double> = MutableLiveData()
     private var mainDescription: MutableLiveData<String> = MutableLiveData()
+    private var snowPrec: MutableLiveData<Double> = MutableLiveData()
+    private var rainPrec: MutableLiveData<Double> = MutableLiveData()
+    private var iconWeather: MutableLiveData<String> = MutableLiveData()
+    private var iconWeatherApi : MutableLiveData<String> = MutableLiveData()
+
     //Variables for 5-Day Forecast
     private var temp1: MutableLiveData<Double> = MutableLiveData()
     private var minTemp1: MutableLiveData<Double> = MutableLiveData()
@@ -108,6 +113,14 @@ class SecondViewModel : ViewModel() {
         return maxTemp5
     }
 
+    fun getRainPrec(): MutableLiveData<Double>{
+        return rainPrec
+    }
+
+    fun getSnowPrec(): MutableLiveData<Double>{
+        return snowPrec
+    }
+
     fun getDate1(): MutableLiveData<String> {
         return date1
     }
@@ -156,6 +169,10 @@ class SecondViewModel : ViewModel() {
         return mainDescription
     }
 
+    fun getIconWeather(): MutableLiveData<String> {
+        return iconWeather
+    }
+
     //TO INCLUDE ON PARAMETERS THE SWITCH WITH CHOSEN METRIC
     fun oneDayForecast(city: String, queue: RequestQueue) {
         val urlOneDayForecast = "https://api.openweathermap.org/data/2.5/weather?q=$city&units=metric&appid=$API"
@@ -167,19 +184,23 @@ class SecondViewModel : ViewModel() {
                 val windSpeed = obj.getJSONObject("wind")
                 val weather = obj.getJSONArray("weather")
                 val description = weather.getJSONObject(0)
+//                val rain = obj.getJSONObject("rain")
+//                val snow = obj.getJSONObject("snow")
+
+
 
                 date.value = SimpleDateFormat("EEE,MMMM dd hh:mm a", Locale.ENGLISH).format(
-                    Date(
-                        today * 1000
-                    )
-                )
+                    Date(today * 1000))
                 temp.value = main.getDouble("temp")
                 wind.value = windSpeed.getDouble("speed")
                 humidity.value = main.getInt("humidity")
                 feelsLike.value = main.getDouble("feels_like")
                 minTemp.value = main.getDouble("temp_min")
                 maxTemp.value = main.getDouble("temp_max")
-                mainDescription.setValue(description.getString("main"))
+//                rainPrec.value = rain.getDouble("3h")
+//                snowPrec.value = snow.getDouble("3h")
+                mainDescription.value = description.getString("main")
+//                iconWeather.value = description.getString("icon")
             },
                 Response.ErrorListener { error("That didn't work!")})
         queue.add(responseOneDayForecast)
