@@ -6,9 +6,9 @@ plugins {
 
 }
 
-def apikeyPropertiesFile = rootProject.file("API.properties")
-def apikeyProperties = new Properties()
-apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+//def apikeyPropertiesFile = rootProject.file("API.properties")
+//def apikeyProperties = new Properties()
+//apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 
 android {
     compileSdk 31

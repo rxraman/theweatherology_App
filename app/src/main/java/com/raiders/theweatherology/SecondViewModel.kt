@@ -11,7 +11,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class SecondViewModel : ViewModel() {
-    private val API: String = BuildConfig.KEY
+    private val API: String =  "574767b600e526d124c0cdaa69212b76"
+    private val APIclose:String = BuildConfig.KEY
     //Variables for Day Forecast
     private var temp: MutableLiveData<Double> = MutableLiveData()
     private var date: MutableLiveData<String> = MutableLiveData()
