@@ -200,7 +200,7 @@ class SecondViewModel : ViewModel() {
 //                rainPrec.value = rain.getDouble("3h")
 //                snowPrec.value = snow.getDouble("3h")
                 mainDescription.value = description.getString("main")
-//                iconWeather.value = description.getString("icon")
+                iconWeather.value = description.getString("icon")
             },
                 Response.ErrorListener { error("That didn't work!")})
         queue.add(responseOneDayForecast)

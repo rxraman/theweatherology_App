@@ -105,6 +105,8 @@ class SecondFragment : Fragment() {
         { mainDescription -> textMainDecription.text = mainDescription.toString() }
         viewModel.getMainDescription().observe(viewLifecycleOwner, mainDescriptionObserver)
 
+
+
     //Text City
         textCity.text = arguments?.getString("message")
         val queue = Volley.newRequestQueue(context)
