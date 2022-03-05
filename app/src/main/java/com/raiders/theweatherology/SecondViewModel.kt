@@ -12,7 +12,7 @@ import java.util.*
 
 class SecondViewModel : ViewModel() {
     private val API: String =  "574767b600e526d124c0cdaa69212b76"
-    private val APIclose:String = BuildConfig.KEY
+//    private val APIclose:String = BuildConfig.KEY
     //Variables for Day Forecast
     private var temp: MutableLiveData<Double> = MutableLiveData()
     private var date: MutableLiveData<String> = MutableLiveData()
@@ -220,6 +220,7 @@ class SecondViewModel : ViewModel() {
                 val main0 = dayOne.getJSONObject("main")
                 temp1.value = main0.getDouble("temp")
                 minTemp1.value= main0.getDouble("temp_min")
+                maxTemp1.value = main0.getDouble("temp_max")
                 val toDate0 = dayOne.getLong("dt")
                 date1.value = SimpleDateFormat(
                     "EEE",
@@ -230,6 +231,8 @@ class SecondViewModel : ViewModel() {
                 val dayTwo = obj.getJSONArray("list").getJSONObject(8)
                 val main8 = dayTwo.getJSONObject("main")
                 temp2.value = main8.getDouble("temp")
+                minTemp2.value= main8.getDouble("temp_min")
+                maxTemp2.value = main8.getDouble("temp_max")
                 val toDate8 = dayTwo.getLong("dt")
                 date2.value = SimpleDateFormat(
                     "EEE",
@@ -239,6 +242,8 @@ class SecondViewModel : ViewModel() {
                 val dayThree = obj.getJSONArray("list").getJSONObject(16)
                 val main16 = dayThree.getJSONObject("main")
                 temp3.value = main16.getDouble("temp")
+                minTemp3.value= main16.getDouble("temp_min")
+                maxTemp3.value = main16.getDouble("temp_max")
                 val toDate16 = dayThree.getLong("dt")
                 date3.value = SimpleDateFormat("EEE", Locale.ENGLISH).format(
                     Date(
@@ -249,6 +254,8 @@ class SecondViewModel : ViewModel() {
                 val dayFour = obj.getJSONArray("list").getJSONObject(24)
                 val main24 = dayFour.getJSONObject("main")
                 temp4.value = main24.getDouble("temp")
+                minTemp4.value= main24.getDouble("temp_min")
+                maxTemp4.value = main24.getDouble("temp_max")
                 val toDate24 = dayFour.getLong("dt")
                 date4.value = SimpleDateFormat("EEE", Locale.ENGLISH).format(
                     Date(
@@ -259,6 +266,8 @@ class SecondViewModel : ViewModel() {
                 val dayFive = obj.getJSONArray("list").getJSONObject(32)
                 val main32 = dayFive.getJSONObject("main")
                 temp5.value = main32.getDouble("temp")
+                minTemp5.value= main32.getDouble("temp_min")
+                maxTemp5.value = main32.getDouble("temp_max")
                 val toDate32 = dayFive.getLong("dt")
                 date5.setValue(
                     SimpleDateFormat("EEE", Locale.ENGLISH).format(

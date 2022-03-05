@@ -34,23 +34,34 @@ class SecondFragment : Fragment() {
             Observer<Double> { temp -> textTemp.text = ("%.0f" + "\u00B0").format(temp) }
         viewModel.getTemp().observe(viewLifecycleOwner, tempObserver)
 
-        val tempObserver1 = Observer<Double> { temp1 -> textTempOne.text = ("%.0f" + "\u00B0").format(temp1) }
-        viewModel.getTemp1().observe(viewLifecycleOwner, tempObserver1)
+        val tempObserver1MinTemp = Observer<Double> { temp1 -> tempMin1.text = ("%.0f" + "\u00B0").format(temp1) }
+        viewModel.getMinTemp1().observe(viewLifecycleOwner, tempObserver1MinTemp)
 
-        val tempObserver2 = Observer<Double> { temp2 -> textTempTwo.text = ("%.0f" + "\u00B0").format(temp2) }
-        viewModel.getTemp2().observe(viewLifecycleOwner, tempObserver2)
+        val tempObserver1MaxTemp = Observer<Double> {temp1Max -> tempMax1.text =  ("%.0f" + "\u00B0").format(temp1Max) }
+        viewModel.getMaxTemp1().observe(viewLifecycleOwner,tempObserver1MaxTemp)
 
-        val tempObserver3 =
-            Observer<Double> { temp3 -> textTempThree.text = ("%.0f" + "\u00B0").format(temp3) }
-        viewModel.getTemp3().observe(viewLifecycleOwner, tempObserver3)
+        val tempObserver2MinTemp = Observer<Double> { temp2 -> tempMin2.text = ("%.0f" + "\u00B0").format(temp2) }
+        viewModel.getMinTemp2().observe(viewLifecycleOwner, tempObserver2MinTemp)
+        val tempObserver2MaxTemp = Observer<Double> {temp2Max -> tempMax2.text =  ("%.0f" + "\u00B0").format(temp2Max) }
+        viewModel.getMaxTemp2().observe(viewLifecycleOwner,tempObserver2MaxTemp)
 
-        val tempObserver4 =
-            Observer<Double> { temp4 -> textTempFour.text = ("%.0f" + "\u00B0").format(temp4) }
-        viewModel.getTemp4().observe(viewLifecycleOwner, tempObserver4)
+        val tempObserver3MinTemp =
+            Observer<Double> { temp3 -> tempMin3.text = ("%.0f" + "\u00B0").format(temp3) }
+        viewModel.getMinTemp3().observe(viewLifecycleOwner, tempObserver3MinTemp)
+        val tempObserver3MaxTemp = Observer<Double> {temp3Max -> tempMax3.text =  ("%.0f" + "\u00B0").format(temp3Max) }
+        viewModel.getMaxTemp3().observe(viewLifecycleOwner,tempObserver3MaxTemp)
 
-        val tempObserver5 =
-            Observer<Double> { temp5 -> textTempFive.text = ("%.0f" + "\u00B0").format(temp5) }
-        viewModel.getTemp5().observe(viewLifecycleOwner, tempObserver5)
+        val tempObserver4MinTemp =
+            Observer<Double> { temp4 -> tempMin4.text = ("%.0f" + "\u00B0").format(temp4) }
+        viewModel.getMinTemp4().observe(viewLifecycleOwner, tempObserver4MinTemp)
+        val tempObserver4MaxTemp = Observer<Double> {temp4Max -> tempMax4.text =  ("%.0f" + "\u00B0").format(temp4Max) }
+        viewModel.getMaxTemp4().observe(viewLifecycleOwner,tempObserver4MaxTemp)
+
+        val tempObserver5MinTemp =
+            Observer<Double> { temp5 -> tempMin5.text = ("%.0f" + "\u00B0").format(temp5) }
+        viewModel.getMinTemp5().observe(viewLifecycleOwner, tempObserver5MinTemp)
+        val tempObserver5MaxTemp = Observer<Double> {temp5Max -> tempMax5.text =  ("%.0f" + "\u00B0").format(temp5Max) }
+        viewModel.getMaxTemp5().observe(viewLifecycleOwner,tempObserver5MaxTemp)
 
 
 //        val dateObserver = Observer<String> { date -> textDate.text = date.toString() }
