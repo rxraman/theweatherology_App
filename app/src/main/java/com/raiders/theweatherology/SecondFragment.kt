@@ -145,13 +145,13 @@ class SecondFragment : Fragment() {
         textCity.text = arguments?.getString("message")
         val queue = Volley.newRequestQueue(context)
         arguments?.getString("message")?.let {
-            viewModel.oneDayForecast("imperial", it, queue)
+            viewModel.oneDayForecast("metric", it, queue)
         }
 
         val queue2 = Volley.newRequestQueue(context)
         arguments?.getString("message")?.let {
 
-            viewModel.fiveDayForecast("imperial", it, queue2)
+            viewModel.fiveDayForecast("metric", it, queue2)
 
         }
         //Unit Switch
@@ -160,23 +160,23 @@ class SecondFragment : Fragment() {
                 if (isChecked) {
                     val queue = Volley.newRequestQueue(context)
                     arguments?.getString("message")?.let {
-                        viewModel.oneDayForecast("metric", it, queue)
-                    }
-                    val queue2 = Volley.newRequestQueue(context)
-                    arguments?.getString("message")?.let {
-
-                        viewModel.fiveDayForecast("metric", it, queue2)
-
-                    }
-                } else {
-                    val queue = Volley.newRequestQueue(context)
-                    arguments?.getString("message")?.let {
                         viewModel.oneDayForecast("imperial", it, queue)
                     }
                     val queue2 = Volley.newRequestQueue(context)
                     arguments?.getString("message")?.let {
 
                         viewModel.fiveDayForecast("imperial", it, queue2)
+
+                    }
+                } else {
+                    val queue = Volley.newRequestQueue(context)
+                    arguments?.getString("message")?.let {
+                        viewModel.oneDayForecast("metric", it, queue)
+                    }
+                    val queue2 = Volley.newRequestQueue(context)
+                    arguments?.getString("message")?.let {
+
+                        viewModel.fiveDayForecast("metric", it, queue2)
 
                     }
 
