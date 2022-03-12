@@ -49,6 +49,8 @@ class SecondViewModel : ViewModel() {
     private var date4: MutableLiveData<String> = MutableLiveData()
     private var date5: MutableLiveData<String> = MutableLiveData()
 
+
+
     //Getters
     fun getTemp(): MutableLiveData<Double> {
         return temp
@@ -175,8 +177,8 @@ class SecondViewModel : ViewModel() {
     }
 
     //TO INCLUDE ON PARAMETERS THE SWITCH WITH CHOSEN METRIC
-    fun oneDayForecast(city: String, queue: RequestQueue) {
-        val urlOneDayForecast = "https://api.openweathermap.org/data/2.5/weather?q=$city&units=metric&appid=$API"
+    fun oneDayForecast(unit: String, city: String, queue: RequestQueue) {
+        val urlOneDayForecast = "https://api.openweathermap.org/data/2.5/weather?q=$city&units=$unit&appid=$API"
         val responseOneDayForecast =
             StringRequest(Request.Method.GET, urlOneDayForecast, { response ->
                 val obj = JSONObject(response)
@@ -208,9 +210,9 @@ class SecondViewModel : ViewModel() {
     }
 
     //TO INCLUDE ON PARAMETERS THE SWITCH WITH CHOSEN METRIC
-    fun fiveDayForecast(city: String, queue: RequestQueue) {
+    fun fiveDayForecast(unit:String, city: String, queue: RequestQueue) {
         val urlFiveDayForecast =
-            "https://api.openweathermap.org/data/2.5/forecast?q=$city&units=imperial&appid=$API"
+            "https://api.openweathermap.org/data/2.5/forecast?q=$city&units=$unit&appid=$API"
 
         val responseFiveDayForecast =
             StringRequest(Request.Method.GET, urlFiveDayForecast, { response ->

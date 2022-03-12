@@ -40,24 +40,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editCity" />
 
-    <Switch
-        android:id="@+id/unitMeasureSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="56dp"
-        android:showText="true"
-        android:text="@string/UnitMeasure"
-        android:textAlignment="inherit"
-        android:textColor="@color/white"
-        android:textOff="@string/Celsius"
-        android:textOn="@string/fahrenheit"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:scaleX="1.8"
-        android:scaleY="1.8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

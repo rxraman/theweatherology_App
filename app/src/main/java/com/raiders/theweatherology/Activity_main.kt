@@ -1,11 +1,11 @@
 package com.raiders.theweatherology
 
-import android.content.pm.ApplicationInfo
-import android.content.pm.PackageManager
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Switch
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 
@@ -15,6 +15,7 @@ class Activity_main : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
         setSupportActionBar(findViewById(R.id.toolbar))
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

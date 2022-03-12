@@ -1,14 +1,21 @@
 package com.raiders.theweatherology
 
 import android.annotation.SuppressLint
+import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Switch
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.volley.toolbox.Volley
+import kotlinx.android.synthetic.*
+import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_second.*
 
 class SecondFragment : Fragment() {
@@ -19,6 +26,7 @@ class SecondFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
@@ -27,41 +35,49 @@ class SecondFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(SecondViewModel::class.java)
+
+        viewModel = ViewModelProvider(this)[SecondViewModel::class.java]
 
         //5day Forecast Observers
         val tempObserver =
             Observer<Double> { temp -> textTemp.text = ("%.0f" + "\u00B0").format(temp) }
         viewModel.getTemp().observe(viewLifecycleOwner, tempObserver)
 
-        val tempObserver1MinTemp = Observer<Double> { temp1 -> tempMin1.text = ("%.0f" + "\u00B0").format(temp1) }
+        val tempObserver1MinTemp =
+            Observer<Double> { temp1 -> tempMin1.text = ("%.0f" + "\u00B0").format(temp1) }
         viewModel.getMinTemp1().observe(viewLifecycleOwner, tempObserver1MinTemp)
 
-        val tempObserver1MaxTemp = Observer<Double> {temp1Max -> tempMax1.text =  ("%.0f" + "\u00B0").format(temp1Max) }
-        viewModel.getMaxTemp1().observe(viewLifecycleOwner,tempObserver1MaxTemp)
+        val tempObserver1MaxTemp =
+            Observer<Double> { temp1Max -> tempMax1.text = ("%.0f" + "\u00B0").format(temp1Max) }
+        viewModel.getMaxTemp1().observe(viewLifecycleOwner, tempObserver1MaxTemp)
 
-        val tempObserver2MinTemp = Observer<Double> { temp2 -> tempMin2.text = ("%.0f" + "\u00B0").format(temp2) }
+        val tempObserver2MinTemp =
+            Observer<Double> { temp2 -> tempMin2.text = ("%.0f" + "\u00B0").format(temp2) }
         viewModel.getMinTemp2().observe(viewLifecycleOwner, tempObserver2MinTemp)
-        val tempObserver2MaxTemp = Observer<Double> {temp2Max -> tempMax2.text =  ("%.0f" + "\u00B0").format(temp2Max) }
-        viewModel.getMaxTemp2().observe(viewLifecycleOwner,tempObserver2MaxTemp)
+        val tempObserver2MaxTemp =
+            Observer<Double> { temp2Max -> tempMax2.text = ("%.0f" + "\u00B0").format(temp2Max) }
+        viewModel.getMaxTemp2().observe(viewLifecycleOwner, tempObserver2MaxTemp)
 
         val tempObserver3MinTemp =
             Observer<Double> { temp3 -> tempMin3.text = ("%.0f" + "\u00B0").format(temp3) }
         viewModel.getMinTemp3().observe(viewLifecycleOwner, tempObserver3MinTemp)
-        val tempObserver3MaxTemp = Observer<Double> {temp3Max -> tempMax3.text =  ("%.0f" + "\u00B0").format(temp3Max) }
-        viewModel.getMaxTemp3().observe(viewLifecycleOwner,tempObserver3MaxTemp)
+        val tempObserver3MaxTemp =
+            Observer<Double> { temp3Max -> tempMax3.text = ("%.0f" + "\u00B0").format(temp3Max) }
+        viewModel.getMaxTemp3().observe(viewLifecycleOwner, tempObserver3MaxTemp)
 
         val tempObserver4MinTemp =
             Observer<Double> { temp4 -> tempMin4.text = ("%.0f" + "\u00B0").format(temp4) }
         viewModel.getMinTemp4().observe(viewLifecycleOwner, tempObserver4MinTemp)
-        val tempObserver4MaxTemp = Observer<Double> {temp4Max -> tempMax4.text =  ("%.0f" + "\u00B0").format(temp4Max) }
-        viewModel.getMaxTemp4().observe(viewLifecycleOwner,tempObserver4MaxTemp)
+        val tempObserver4MaxTemp =
+            Observer<Double> { temp4Max -> tempMax4.text = ("%.0f" + "\u00B0").format(temp4Max) }
+        viewModel.getMaxTemp4().observe(viewLifecycleOwner, tempObserver4MaxTemp)
 
         val tempObserver5MinTemp =
             Observer<Double> { temp5 -> tempMin5.text = ("%.0f" + "\u00B0").format(temp5) }
         viewModel.getMinTemp5().observe(viewLifecycleOwner, tempObserver5MinTemp)
-        val tempObserver5MaxTemp = Observer<Double> {temp5Max -> tempMax5.text =  ("%.0f" + "\u00B0").format(temp5Max) }
-        viewModel.getMaxTemp5().observe(viewLifecycleOwner,tempObserver5MaxTemp)
+        val tempObserver5MaxTemp =
+            Observer<Double> { temp5Max -> tempMax5.text = ("%.0f" + "\u00B0").format(temp5Max) }
+        viewModel.getMaxTemp5().observe(viewLifecycleOwner, tempObserver5MaxTemp)
 
 
 //        val dateObserver = Observer<String> { date -> textDate.text = date.toString() }
@@ -97,12 +113,20 @@ class SecondFragment : Fragment() {
         viewModel.getFeelsLike().observe(viewLifecycleOwner, feelsLikeObserver)
 
         val minTempObserver = Observer<Double>
-        { minTemp -> minTem.text = ("%.0f"+"\u00B0").format(minTemp) }
+        { minTemp -> minTem.text = ("%.0f" + "\u00B0").format(minTemp) }
         viewModel.getMinTemp().observe(viewLifecycleOwner, minTempObserver)
 
         val maxTempObserver = Observer<Double>
         { maxTemp -> maxTem.text = ("%.0f" + "\u00B0").format(maxTemp) }
         viewModel.getMaxTemp().observe(viewLifecycleOwner, maxTempObserver)
+
+        //Icon Observers:
+//        var icon : String
+//        val iconObserver = Observer<String>{ iconText-> icon  = iconText.toString() }
+//        viewModel.getIconWeather().observe(viewLifecycleOwner, iconObserver)
+//val media = "http://openweathermap.org/img/wn/$icon.png"
+//        view?.findViewById<ImageView>(R.id.iconView)
+
 
 //        val rainPrecipitation = Observer<Double> {
 //            rainPrec -> textRain.text = rainPrec.toString() + " mm" }
@@ -117,14 +141,57 @@ class SecondFragment : Fragment() {
         viewModel.getMainDescription().observe(viewLifecycleOwner, mainDescriptionObserver)
 
 
-
-    //Text City
+        //Text City
         textCity.text = arguments?.getString("message")
         val queue = Volley.newRequestQueue(context)
-        arguments?.getString("message")?.let { viewModel.oneDayForecast(it, queue) }
+        arguments?.getString("message")?.let {
+            viewModel.oneDayForecast("imperial", it, queue)
+        }
+
         val queue2 = Volley.newRequestQueue(context)
-        arguments?.getString("message")?.let { viewModel.fiveDayForecast(it, queue2) }
+        arguments?.getString("message")?.let {
 
+            viewModel.fiveDayForecast("imperial", it, queue2)
+
+        }
+        //Unit Switch
+        view?.findViewById<Switch>(R.id.unitMeasureSwitch)
+            ?.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
+                    val queue = Volley.newRequestQueue(context)
+                    arguments?.getString("message")?.let {
+                        viewModel.oneDayForecast("metric", it, queue)
+                    }
+                    val queue2 = Volley.newRequestQueue(context)
+                    arguments?.getString("message")?.let {
+
+                        viewModel.fiveDayForecast("metric", it, queue2)
+
+                    }
+                } else {
+                    val queue = Volley.newRequestQueue(context)
+                    arguments?.getString("message")?.let {
+                        viewModel.oneDayForecast("imperial", it, queue)
+                    }
+                    val queue2 = Volley.newRequestQueue(context)
+                    arguments?.getString("message")?.let {
+
+                        viewModel.fiveDayForecast("imperial", it, queue2)
+
+                    }
+
+                }
+            }
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
