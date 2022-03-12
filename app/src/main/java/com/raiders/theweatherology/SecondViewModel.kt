@@ -205,7 +205,8 @@ class SecondViewModel : ViewModel() {
                 mainDescription.value = description.getString("main")
                 iconWeather.value = description.getString("icon")
             },
-                Response.ErrorListener { error("That didn't work!")})
+                Response.ErrorListener { }
+            )
         queue.add(responseOneDayForecast)
     }
 
@@ -279,7 +280,8 @@ class SecondViewModel : ViewModel() {
                     )
                 )
             },
-                Response.ErrorListener { error("That didn't work!")})
+                Response.ErrorListener { }
+            )
         queue.add(responseFiveDayForecast)
     }
 

@@ -24,9 +24,9 @@
             android:name="message"
             app:argType="string"
             android:defaultValue="Nothing" />
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_SecondFragment_to_FirstFragment"-->
+<!--            app:destination="@id/FirstFragment" />-->
     </fragment>
 
 </navigation>
