@@ -8,13 +8,19 @@ import android.view.MenuItem
 import android.widget.Switch
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.bumptech.glide.Glide
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 
 class Activity_main : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
         setSupportActionBar(findViewById(R.id.toolbar))
+
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
     }
 
