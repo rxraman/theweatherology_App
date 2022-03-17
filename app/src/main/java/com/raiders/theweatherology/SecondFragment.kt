@@ -1,26 +1,16 @@
 package com.raiders.theweatherology
 
 import android.annotation.SuppressLint
-import android.content.Context
-
-import com.bumptech.glide.Glide
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Switch
-
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_second.*
-
 
 
 class SecondFragment : Fragment() {
@@ -36,15 +26,9 @@ class SecondFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_second, container, false)
     }
 
-
     @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-
-        viewModel = ViewModelProvider(this)[SecondViewModel::class.java]
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-
 
         //5day Forecast Observers
         val tempObserver =
@@ -113,7 +97,7 @@ class SecondFragment : Fragment() {
         viewModel.getWind().observe(viewLifecycleOwner, windObserver)
 
         val humidityObserver = Observer<Int>
-        { humidity -> textHumidity.text = humidity.toString() + " %" }
+        { humidity -> textHumidity.text = "$humidity %" }
         viewModel.getHumidity().observe(viewLifecycleOwner, humidityObserver)
 
         val feelsLikeObserver = Observer<Double>
@@ -129,9 +113,6 @@ class SecondFragment : Fragment() {
         viewModel.getMaxTemp().observe(viewLifecycleOwner, maxTempObserver)
 
 
-
-        val iconObserver = Observer<String>{ icon-> iconCode.text  = icon.toString() }
-        viewModel.getIconWeather().observe(viewLifecycleOwner, iconObserver)
 //        val iconText = viewModel.getIconWeather()
 //        val imageview = view?.findViewById<ImageView>(R.id.iconView)
 //  val media = "http://openweathermap.org/img/wn/$iconText.png"
@@ -141,19 +122,6 @@ class SecondFragment : Fragment() {
 //                .load(media)
 //                .into(imageview)
 
-
-
-
-
-
-
-//        val rainPrecipitation = Observer<Double> {
-//            rainPrec -> textRain.text = rainPrec.toString() + " mm" }
-//        viewModel.getRainPrec().observe(viewLifecycleOwner, rainPrecipitation)
-//
-//        val snowPrecipitation = Observer<Double> {
-//            snowPrec -> textSnow.text = snowPrec.toString() + " mm" }
-//        viewModel.getSnowPrec().observe(viewLifecycleOwner, snowPrecipitation)
 
         val mainDescriptionObserver = Observer<String>
         { mainDescription -> textMainDecription.text = mainDescription.toString() }

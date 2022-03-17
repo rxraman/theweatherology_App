@@ -28,12 +28,12 @@ class FirstFragment : Fragment() {
 
         view.findViewById<Button>(R.id.button).setOnClickListener {
 
-                    Navigation.findNavController(it).navigate(
-                        R.id.action_FirstFragment_to_SecondFragment,
-                        bundleOf("message" to editCity.text.toString())
-                    )
-                }
-
+            Navigation.findNavController(it).navigate(
+                R.id.action_FirstFragment_to_SecondFragment,
+                bundleOf("message" to editCity.text.toString())
+            )
         }
 
     }
+
+}

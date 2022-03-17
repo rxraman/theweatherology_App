@@ -12,7 +12,7 @@ import java.util.*
 
 class SecondViewModel : ViewModel() {
     private val API: String =  "574767b600e526d124c0cdaa69212b76"
-//    private val APIclose:String = BuildConfig.KEY
+    //private val APIclose:String = BuildConfig.KEY
     //Variables for Day Forecast
     private var temp: MutableLiveData<Double> = MutableLiveData()
     private var date: MutableLiveData<String> = MutableLiveData()
@@ -48,8 +48,6 @@ class SecondViewModel : ViewModel() {
     private var date3: MutableLiveData<String> = MutableLiveData()
     private var date4: MutableLiveData<String> = MutableLiveData()
     private var date5: MutableLiveData<String> = MutableLiveData()
-
-
 
     //Getters
     fun getTemp(): MutableLiveData<Double> {
@@ -188,8 +186,6 @@ class SecondViewModel : ViewModel() {
                 val weather = obj.getJSONArray("weather")
                 val description = weather.getJSONObject(0)
 
-
-
                 date.value = SimpleDateFormat("EEE,MMMM dd hh:mm a", Locale.ENGLISH).format(
                     Date(today * 1000))
                 temp.value = main.getDouble("temp")
@@ -198,7 +194,6 @@ class SecondViewModel : ViewModel() {
                 feelsLike.value = main.getDouble("feels_like")
                 minTemp.value = main.getDouble("temp_min")
                 maxTemp.value = main.getDouble("temp_max")
-
                 mainDescription.value = description.getString("main")
                 iconWeather.value = description.getString("icon")
             },
@@ -218,10 +213,6 @@ class SecondViewModel : ViewModel() {
                 val windSpeed = obj.getJSONObject("wind")
                 val weather = obj.getJSONArray("weather")
                 val description = weather.getJSONObject(0)
-//                val rain = obj.getJSONObject("rain")
-//                val snow = obj.getJSONObject("snow")
-
-
 
                 date.value = SimpleDateFormat("EEE,MMMM dd hh:mm a", Locale.ENGLISH).format(
                     Date(today * 1000))
@@ -231,8 +222,6 @@ class SecondViewModel : ViewModel() {
                 feelsLike.value = main.getDouble("feels_like")
                 minTemp.value = main.getDouble("temp_min")
                 maxTemp.value = main.getDouble("temp_max")
-//                rainPrec.value = rain.getDouble("3h")
-//                snowPrec.value = snow.getDouble("3h")
                 mainDescription.value = description.getString("main")
                 iconWeather.value = description.getString("icon")
             },
@@ -240,7 +229,6 @@ class SecondViewModel : ViewModel() {
             )
         queue.add(responseOneDayForecast)
     }
-
 
 
     //fivedaywithLocation
@@ -262,7 +250,6 @@ class SecondViewModel : ViewModel() {
                     "EEE",
                     Locale.ENGLISH
                 ).format(Date(toDate0 * 1000))
-
 
                 val dayTwo = obj.getJSONArray("list").getJSONObject(8)
                 val main8 = dayTwo.getJSONObject("main")
@@ -318,7 +305,7 @@ class SecondViewModel : ViewModel() {
         queue.add(responseFiveDayForecast)
     }
 
-    //TO INCLUDE ON PARAMETERS THE SWITCH WITH CHOSEN METRIC
+
     fun fiveDayForecast(unit:String, city: String, queue: RequestQueue) {
         val urlFiveDayForecast =
             "https://api.openweathermap.org/data/2.5/forecast?q=$city&units=$unit&appid=$API"
