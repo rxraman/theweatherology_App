@@ -140,6 +140,7 @@
                     android:layout_height="wrap_content"
                     android:width="150sp"
                     android:text="@string/Humidity"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     tools:layout_editor_absoluteX="31dp"
                     tools:layout_editor_absoluteY="567dp" />
@@ -149,6 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Humidity"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="127dp"
@@ -175,6 +177,7 @@
                     android:layout_height="wrap_content"
                     android:width="150sp"
                     android:text="@string/FeelsLike"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="107dp" />
@@ -184,6 +187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/FeelsLike"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="47dp"
@@ -211,6 +215,7 @@
                     android:layout_height="wrap_content"
                     android:width="150sp"
                     android:text="@string/WindSpeed"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     tools:layout_editor_absoluteX="31dp"
                     tools:layout_editor_absoluteY="310dp" />
@@ -221,6 +226,7 @@
                     android:layout_height="wrap_content"
 
                     android:text="@string/WindSpeed"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="0dp"
@@ -248,7 +254,8 @@
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tempMin1"
@@ -256,6 +263,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
@@ -264,6 +272,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -288,7 +297,8 @@
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tempMin2"
@@ -304,6 +314,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -327,7 +338,8 @@
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tempMin3"
@@ -335,6 +347,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
@@ -343,6 +356,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -366,7 +380,8 @@
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tempMin4"
@@ -374,6 +389,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
@@ -382,6 +398,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -405,7 +422,8 @@
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/tempMin5"
@@ -413,6 +431,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
@@ -421,6 +440,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -473,63 +493,12 @@
         app:layout_constraintStart_toEndOf="@+id/maxTem"
         app:layout_constraintTop_toBottomOf="@+id/textMainDecription" />
 
-    <TextView
-        android:id="@+id/rainView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/rainPrec"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/textRain"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/maxTem" />
-
-    <TextView
-        android:id="@+id/textRain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/rainPrec"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rainView"
-        app:layout_constraintTop_toBottomOf="@+id/minTem" />
-
-    <TextView
-        android:id="@+id/SnowView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/snowPrec"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/textSnow"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rainView" />
-
-    <TextView
-        android:id="@+id/textSnow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/snowPrec"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SnowView"
-        app:layout_constraintTop_toBottomOf="@+id/textRain" />
-
     <ImageView
         android:id="@+id/iconView"
         android:layout_width="60dp"
         android:layout_height="46dp"
         android:layout_marginTop="68dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCity"
@@ -541,16 +510,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="445dp" />
-
-    <TextView
-        android:id="@+id/iconCode"
-        android:layout_width="76dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/maxTem"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

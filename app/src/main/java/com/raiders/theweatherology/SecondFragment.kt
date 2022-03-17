@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.android.volley.toolbox.Volley
-import com.google.android.gms.location.FusedLocationProviderClient
 import kotlinx.android.synthetic.main.fragment_second.*
 
 
 class SecondFragment : Fragment() {
 
     private lateinit var viewModel: SecondViewModel
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    //private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +29,7 @@ class SecondFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        viewModel = ViewModelProvider(this)[SecondViewModel::class.java]
         //5day Forecast Observers
         val tempObserver =
             Observer<Double> { temp -> textTemp.text = ("%.0f" + "\u00B0").format(temp) }
