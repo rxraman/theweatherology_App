@@ -15,8 +15,8 @@
     <string name="temperature">Temperature</string>
     <string name="date">Date</string>
     <string name="enter_a_city_name">Enter a city name</string>
-    <string name="CheckToday">Check Weather Conditions</string>
-    <string name="CheckFive">Check 5 Days Weather</string>
+    <string name="CheckCityWeather">Check City\'s Weather </string>
+    <string name="CheckWeatherUsingLocation">Check Weather Using Location</string>
     <string name="Sunrise">sunrise</string>
     <string name="Sunset">sunset</string>
     <string name="MainDescription">Weather Condition</string>

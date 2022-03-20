@@ -306,6 +306,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <TextView
@@ -488,6 +489,7 @@
         android:text="@string/LowestTemp"
         android:textColor="@android:color/white"
         android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/minTem"
         app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toEndOf="@+id/maxTem"
@@ -495,14 +497,12 @@
 
     <ImageView
         android:id="@+id/iconView"
-        android:layout_width="60dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="68dp"
-        android:visibility="visible"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCity"
-        tools:src="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/textCity" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

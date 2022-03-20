@@ -28,10 +28,10 @@
         android:id="@+id/button"
         android:layout_width="177dp"
         android:layout_height="57dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/button"
         android:drawableBottom="@drawable/button"
-        android:text="@string/CheckToday"
+        android:text="@string/CheckCityWeather"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -39,5 +39,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editCity" />
+
+    <android.widget.Button
+        android:id="@+id/button2"
+        android:layout_width="177dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button"
+        android:drawableBottom="@drawable/button"
+        android:text="@string/CheckWeatherUsingLocation"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

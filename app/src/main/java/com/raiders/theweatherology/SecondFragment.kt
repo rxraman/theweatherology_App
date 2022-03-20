@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.android.volley.toolbox.Volley
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_second.*
+
 
 
 class SecondFragment : Fragment() {
@@ -30,6 +33,7 @@ class SecondFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this)[SecondViewModel::class.java]
+
         //5day Forecast Observers
         val tempObserver =
             Observer<Double> { temp -> textTemp.text = ("%.0f" + "\u00B0").format(temp) }
@@ -113,14 +117,10 @@ class SecondFragment : Fragment() {
         viewModel.getMaxTemp().observe(viewLifecycleOwner, maxTempObserver)
 
 
-//        val iconText = viewModel.getIconWeather()
-//        val imageview = view?.findViewById<ImageView>(R.id.iconView)
-//  val media = "http://openweathermap.org/img/wn/$iconText.png"
-
-
-//    Glide.with(this.)
-//                .load(media)
-//                .into(imageview)
+        val iconText = viewModel.getIconWeather()
+        val icon = "http://openweathermap.org/img/wn/$iconText.png"
+        val imageview = view?.findViewById<ImageView>(R.id.iconView)
+        Picasso.with(context).load(icon).resize(300, 0).into(imageview)
 
 
         val mainDescriptionObserver = Observer<String>

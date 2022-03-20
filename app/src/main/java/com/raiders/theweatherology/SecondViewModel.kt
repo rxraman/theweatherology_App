@@ -22,8 +22,6 @@ class SecondViewModel : ViewModel() {
     private var minTemp: MutableLiveData<Double> = MutableLiveData()
     private var maxTemp: MutableLiveData<Double> = MutableLiveData()
     private var mainDescription: MutableLiveData<String> = MutableLiveData()
-    private var snowPrec: MutableLiveData<Double> = MutableLiveData()
-    private var rainPrec: MutableLiveData<Double> = MutableLiveData()
     private var iconWeather: MutableLiveData<String> = MutableLiveData()
     private var iconWeatherApi : MutableLiveData<String> = MutableLiveData()
 
@@ -112,14 +110,6 @@ class SecondViewModel : ViewModel() {
 
     fun getMaxTemp5(): MutableLiveData<Double>{
         return maxTemp5
-    }
-
-    fun getRainPrec(): MutableLiveData<Double>{
-        return rainPrec
-    }
-
-    fun getSnowPrec(): MutableLiveData<Double>{
-        return snowPrec
     }
 
     fun getDate1(): MutableLiveData<String> {
