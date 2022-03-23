@@ -12,8 +12,8 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import kotlinx.android.synthetic.main.fragment_first.*
 
 class FirstFragment : Fragment() {
-    // FusedLocationProviderClient - Main class for receiving location updates.
-    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+
+    private lateinit var mfusedLocation: FusedLocationProviderClient
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +34,9 @@ class FirstFragment : Fragment() {
 
         //Button2
         view.findViewById<Button>(R.id.button2).setOnClickListener {
-            //fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this.requireActivity())
-
+//            mfusedLocation= LocationServices.getFusedLocationProviderClient(this.requireContext())
+//
+//            getLastLocation()
 //            Navigation.findNavController(it).navigate(
 //                R.id.action_FirstFragment_to_SecondFragment,
 //                bundleOf("lat" to editLat.text.toString(), "long" to editLong.text.toString())
