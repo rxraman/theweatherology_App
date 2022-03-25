@@ -185,7 +185,8 @@ class SecondViewModel : ViewModel() {
                 minTemp.value = main.getDouble("temp_min")
                 maxTemp.value = main.getDouble("temp_max")
                 mainDescription.value = description.getString("main")
-                iconWeather.value = description.getString("icon")
+                var icon = description.getString("icon")
+                iconWeather.value = "https://api.openweathermap.org/img/w/$icon.png"
             },
                 Response.ErrorListener { }
             )
@@ -213,7 +214,8 @@ class SecondViewModel : ViewModel() {
                 minTemp.value = main.getDouble("temp_min")
                 maxTemp.value = main.getDouble("temp_max")
                 mainDescription.value = description.getString("main")
-                iconWeather.value = description.getString("icon")
+                var icon = description.getString("icon")
+                iconWeather.value = "https://api.openweathermap.org/img/w/$icon.png"
             },
                 Response.ErrorListener { }
             )
