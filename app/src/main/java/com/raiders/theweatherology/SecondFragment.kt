@@ -118,7 +118,7 @@ class SecondFragment : Fragment() {
 
 
         val iconText = viewModel.getIconWeather()
-        val icon = "http://openweathermap.org/img/wn/$iconText.png"
+        val icon = "https://openweathermap.org/img/w/$iconText.png"
         val imageview = view?.findViewById<ImageView>(R.id.iconView)
         Picasso.with(context).load(icon).resize(300, 0).into(imageview)
 
